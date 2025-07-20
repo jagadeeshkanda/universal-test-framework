@@ -22,6 +22,30 @@
       <scope>test</scope>
     </dependency>
     
+    
+    <!-- Selenium Java -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.21.0</version>
+    </dependency>
+
+    <!-- WebDriver Manager (Auto handles browser drivers like ChromeDriver) -->
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>5.7.0</version>
+    </dependency>
+
+    <!-- TestNG -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.9.0</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- /Selenium Java-->
+    
     <!-- JSON dependency-->
     <!-- Core module -->
 	<dependency>
