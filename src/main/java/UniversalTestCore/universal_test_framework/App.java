@@ -30,7 +30,7 @@ public class App
 		BrowserControlUtils.maximizeBrowser();
 		Thread.sleep(5000);
 		BrowserControlUtils.closeBrowser();
-		
+		System.out.println("Test the CI");
     }
     
     
