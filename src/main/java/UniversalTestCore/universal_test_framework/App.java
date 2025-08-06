@@ -1,25 +1,38 @@
 package UniversalTestCore.universal_test_framework;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.checkerframework.checker.units.qual.kg;
+import org.json.JSONObject;
+
+/*import com.fasterxml.jackson.databind.JsonNode;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.*;*/
+
+import com.universaltestcore.seleniumutils.BrowserControlUtils;
+import com.universaltestcore.seleniumutils.BrowserFactory;
+import com.universaltestcore.seleniumutils.WebElementUtils;
 import com.universaltestcore.utils.JsonFileHandler;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
-
-    public static void main( String[] args )
+	public static void main( String[] args ) throws IOException, InterruptedException
     {
-    	
-    	JsonNode jsonData = JsonFileHandler.readJsonFile("inputfileone.json");
-    	 if (jsonData.has("error")) {
-    	        System.out.println("Error: " + jsonData.get("error").asText());
-    	    } else if (jsonData.has("Name")) {
-    	        System.out.println("Hello World! " + jsonData.toPrettyString());
-    	    } else {
-    	        System.out.println("Key 'Name' not found in the JSON.");
-    	    }
+		BrowserFactory BrowserFactory = new BrowserFactory();
+		WebDriver driver = BrowserFactory.ChooseBrower("Chrome");
+		BrowserControlUtils BrowserControlUtils = new BrowserControlUtils(driver);
+		BrowserControlUtils.navigateTo("https://www.google.com/");
+		BrowserControlUtils.maximizeBrowser();
+		Thread.sleep(5000);
+		BrowserControlUtils.closeBrowser();
+		
     }
+    
+    
+    
 }
